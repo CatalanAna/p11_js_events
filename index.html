@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p9_js-events</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap');
+        p{
+            display: flex;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 5em;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container{ 
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        
+    }
+    #un, #dos{
+        width: 50%;
+        height: 100%;
+    }
+    #un{
+       background-color: red;
+       color: black;
+    }
+    #dos{
+       background-color: black;
+       color: red;
+    }
+    @media (max-width: 1024px){
+        .container{
+            flex-direction: column;
+        }
+        #un, #dos{
+            width: 100%;
+        }
+    }
+    </style>
+    <script>
+        $(document).ready(function(){
+          //  $('#un').hover(function(){
+
+           //     $('#un p').toggle();
+          //  });
+
+            $('#dos').hover(function(){
+                $('#dos p').toggle(); //EL MISMO SE ACTIVA Y SE DESACTIVA TOGLE//
+            });
+        // $('#un p').on('click', function(){
+        //     $(this) .css('font-size','15em'); //ESTO ES PARA CAMBIAR EL CSS, CAMBIAR LA TIPO O LO QUE QUIERAS AL CLICAR
+        //                                         //EL THIS ES SOLO PARA QUE AFECTE A LO QUE HAS ELEGIDO ARRIBA
+        // });
+        // $('#dos').on('.mouseenter',function(){
+        //     $(this).css('width', '100%');
+        //     $('#un').hide();
+        // });
+        $('#un').on('mouseleave', function(){
+            $('.container div').css('background-color', 'black');
+             $('p').css('color','white');
+         });
+         $('#dos').on('mouseleave', function(){
+            $('.container div').css('background-color', 'white');
+         $('p').css('color','black');
+         });
+        // $('#un').on('mousemove', function(){
+        //    $('.container div').css('background-color', 'black');
+             //   $('p').css('color','white');
+           // });
+       
+        
+        
+        });
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div id="un">
+            <p> negro </p>
+        </div>
+        <div id="dos">
+            <p> rojo </p>
+        </div>
+    </div>
+</body>
+</html>
